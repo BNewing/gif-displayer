@@ -4,28 +4,53 @@
 	<meta charset="UTF-8">
 	<title>Giphy API</title>
 	<style>
+
 	body{
 		background-color: #272838;
+		height: 100%;
 	}
+
+	header {
+		height:11rem;
+	}
+
+	.gif-container{
+		display: flex;
+		justify-content: center; /* align horizontal */
+		align-items: center;
+		width: 100%;
+	}
+
 	.gif {
-		margin: auto;
-		display: block;
+		display: flex;
+		align-items: center;
 	    margin-top: 10vh;
 	}
-	.new-gif-button {
+
+	.button {
 		margin: auto;
 		border: 1px solid black;
 		background-color: #989FCE;
 		color: #000000;
-		display:block;
+		display: flex;
+		align-items: center;
 		margin-top: 2vh;
 		font-size: 1.5rem;
 		padding: 0.5rem 1rem;
 		border-radius: 10px;
 	}
-	.new-gif-button:hover {
+
+	.button:hover {
 		background-color: #347FC4;
 	}
+
+	.button--moar-animals{
+		display: inline-block;
+		float: right;
+		margin-bottom: 1rem;
+		text-decoration: none;
+	}
+
 	.triangle{
 		width: 0;
 		height: 0;
@@ -37,18 +62,26 @@
 	    -o-transform: rotate(45deg);
 	    margin-top: -75px;
 	    margin-left: -30px;
-}
-
 	}
+
 	</style>
 
 </head>
 <body>
 
-<div class="triangle"></div>
+<header>
+	<div class="triangle"></div>
+	<a class="button button--moar-animals" href="./menu-page.html">Moaaaar animals</a>
+</header>
 
-<img class="gif" id="gif"/>
-<button class="new-gif-button" onClick="newGif()">Mooaaar corgis</button>
+<main>
+
+	<div class="gif-container">
+		<img class="gif" id="gif"/>
+	</div>
+
+	<button class="button" onClick="newGif()">Mooaaar corgis</button>
+</main>
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
