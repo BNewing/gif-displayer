@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Cute Gifs with Giphy API || Giphy API</title>
+	<link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+<header>
+	<div class="triangle"></div>
+	<a class="button button--moar-animals" href="./menu-page.html">Moaaaar animals</a>
+</header>
+
+<main>
+
+	<div class="gif-container">
+		<img class="gif" id="gif"/>
+	</div>
+
+	<button class="button" onClick="newGif()">Mooaaar corgis</button>
+</main>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<script>
+
+document.onLoad = newGif();
+
+function newGif(){
+	var xhr = $.get("https://api.giphy.com/v1/gifs/random?tag=corgi&api_key=Kr1RJr1e3gMYEl6wKKCcQfDr3K4iIT1l&limit=20");
+	xhr.done(function(data) { 
+		$("#gif").attr("src", data.data.image_url)
+	});
+}
+
+</script>	
+
+</body>
+</html>

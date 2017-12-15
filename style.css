@@ -13,11 +13,28 @@ header {
 	text-align: center;
 }
 
+.menu-container {
+	width: 100%;
+	display: flex;
+}
+
 .gif-container{
 	display: flex;
 	justify-content: center; /* align horizontal */
 	align-items: center;
 	width: 100%;
+}
+
+.hidden {
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0;
+}
+
+.shown {
+	animation: show 2s infinite;
 }
 
 .gif {
@@ -52,6 +69,16 @@ header {
 	margin-top: 0;
 }
 
+.button--menu-page{
+	display: inline-flex;
+	justify-content: space-around;
+	padding: 2rem;
+	text-decoration: none;
+	margin-bottom: 2rem;
+}
+
+
+
 .triangle{
 	width: 0;
 	height: 0;
@@ -63,4 +90,26 @@ header {
     -o-transform: rotate(45deg);
     margin-top: -75px;
     margin-left: -30px;
+}
+
+
+@keyframes hide {
+	100% {
+		  position: absolute; 
+  		overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0;
+	}
+}
+
+@keyframes show {
+	0% {
+		opacity: 100%;
+		z-index: 1;
+	}
+	100% {
+		opacity: 0%;
+		z-index: -1;
+	}
 }
